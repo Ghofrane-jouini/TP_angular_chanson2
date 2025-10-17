@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Modifier une chanson :</h2>
+  <form>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID</label>
+      <input readonly type="text" [(ngModel)]="currentChanson.idChanson" name="idChanson" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Titre</label>
+      <input type="text" [(ngModel)]="currentChanson.titre" name="titre" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Artiste</label>
+      <input type="text" [(ngModel)]="currentChanson.artiste" name="artiste" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Durée (min)</label>
+      <input type="number" [(ngModel)]="currentChanson.duree" name="duree" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date sortie</label>
+      <input type="date" [(ngModel)]="currentChanson.dateSortie" name="dateSortie" class="form-control">
+    </div>
+    <label>Genre</label>
+    <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="updatedGenId">
+      @for(Gen of Genres; track Gen.idGen)
+      {
+        <option [value]="Gen.idGen"> {{Gen.nomGen}} </option>
+      }
+    </select>
+
+    <div class="mt-2">
+      <button type="button" (click)="updateChanson()">Modifier</button>
+    </div>
+  </form>
+</div>

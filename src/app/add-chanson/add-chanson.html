@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div>
+    <h2>Ajouter une Chanson :</h2>
+  </div>
+  <form (ngSubmit)="addChanson()">
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Chanson</label>
+      <input type="text" [(ngModel)]="newChanson.idChanson" name="idChanson" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Titre</label>
+      <input type="text" [(ngModel)]="newChanson.titre" name="titre" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Artiste</label>
+      <input type="text" [(ngModel)]="newChanson.artiste" name="artiste" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Durée</label>
+      <input type="number" [(ngModel)]="newChanson.duree" name="duree" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date de sortie</label>
+      <input type="date" [(ngModel)]="newChanson.dateSortie" name="dateSortie" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Genre</label>
+      <select class="form-control form-control-lg" id="idGen" name="idGen" [(ngModel)]="newIdGen">
+        @for(Gen of Genres; track Gen.idGen){
+        <option [value]="Gen.idGen"> {{Gen.nomGen}} </option>
+        }
+      </select>
+    </div>
+    <div class="mt-3">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+  </form>
+</div>
