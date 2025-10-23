@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   templateUrl: './chansons.html',
   styleUrls: ['./chansons.css'],
-  imports: [DatePipe,RouterLink,CommonModule]
+  imports: [DatePipe,RouterLink,CommonModule,]
 })
 export class Chansons implements OnInit {
   chansons: Chanson[] = [];
